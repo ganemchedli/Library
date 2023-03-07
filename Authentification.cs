@@ -37,7 +37,9 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Admin admin = new Admin();  
+            admin.Show();
+            this.Visible = false; 
         }
 
         private void button1_Paint(object sender, PaintEventArgs e)
