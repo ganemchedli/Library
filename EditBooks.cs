@@ -15,8 +15,7 @@ namespace Library
         public EditBooks()
         {
             InitializeComponent();
-            string dBase = "Data Source=(LocalDB)\\MSSQLLocalDB;Integrated Security=True ";
-            SqlConnection
+            
             
         }
         private void back_paint(object sender, PaintEventArgs e)
