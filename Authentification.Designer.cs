@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Authentification));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,12 +42,6 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Name = "label2";
             // 
             // textBox1
             // 
@@ -102,11 +95,11 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Name = "Authentification";
+            this.Load += new System.EventHandler(this.Authentification_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,7 +108,6 @@
         #endregion
 
         private Label label1;
-        private Label label2;
         private TextBox textBox1;
         private TextBox textBox2;
         private Label label3;

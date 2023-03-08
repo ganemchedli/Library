@@ -53,5 +53,10 @@ namespace Library
             btnPath.AddArc(0, btn.Height - curveSize, curveSize, curveSize, 90, 90);
             btn.Region = new System.Drawing.Region(btnPath);
         }
+
+        private void Authentification_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
