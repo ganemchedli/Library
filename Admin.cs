@@ -50,7 +50,7 @@ namespace Library
         {
             EditBooks admin = new EditBooks();
             admin.Show();
-            this.Visible = false;
+            this.Hide();
         }
 
         private void logout_button_paint(object sender, PaintEventArgs e)
@@ -63,6 +63,20 @@ namespace Library
             btnPath.AddArc(btn.Width - curveSize, btn.Height - curveSize, curveSize, curveSize, 0, 90);
             btnPath.AddArc(0, btn.Height - curveSize, curveSize, curveSize, 90, 90);
             btn.Region = new System.Drawing.Region(btnPath);
+        }
+
+        private void subscribers_Click(object sender, EventArgs e)
+        {
+            ReservedBooks reservedBooks = new ReservedBooks();  
+            reservedBooks.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Authentification authentification = new Authentification(); 
+            authentification.Show();    
+            this.Hide();    
         }
     }
 }

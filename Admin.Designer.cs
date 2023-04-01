@@ -47,6 +47,7 @@
             this.subscribers.TabIndex = 0;
             this.subscribers.Text = "Subscriber management";
             this.subscribers.UseVisualStyleBackColor = false;
+            this.subscribers.Click += new System.EventHandler(this.subscribers_Click);
             this.subscribers.Paint += new System.Windows.Forms.PaintEventHandler(this.subscribers_paint);
             // 
             // books
@@ -86,6 +87,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.logout_button_paint);
             // 
             // Admin

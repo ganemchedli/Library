@@ -33,15 +33,13 @@
             this.logout_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.bookNameTextBox = new System.Windows.Forms.TextBox();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
+            this.authorTextBox = new System.Windows.Forms.TextBox();
+            this.yearOfPubTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,7 +48,7 @@
             this.add_button = new System.Windows.Forms.Button();
             this.delete_button = new System.Windows.Forms.Button();
             this.save_button = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.copiesTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -102,28 +100,6 @@
             this.textBox1.Size = new System.Drawing.Size(381, 27);
             this.textBox1.TabIndex = 3;
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(284, 131);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(63, 24);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Title ";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(369, 131);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(75, 24);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Author";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.RoyalBlue;
@@ -149,40 +125,42 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(590, 188);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // textBox2
+            // bookNameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(264, 419);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 27);
-            this.textBox2.TabIndex = 7;
+            this.bookNameTextBox.Location = new System.Drawing.Point(264, 419);
+            this.bookNameTextBox.Name = "bookNameTextBox";
+            this.bookNameTextBox.Size = new System.Drawing.Size(94, 27);
+            this.bookNameTextBox.TabIndex = 7;
+            this.bookNameTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // titleTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(264, 464);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(190, 27);
-            this.textBox3.TabIndex = 7;
+            this.titleTextBox.Location = new System.Drawing.Point(264, 464);
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.Size = new System.Drawing.Size(190, 27);
+            this.titleTextBox.TabIndex = 7;
             // 
-            // textBox4
+            // authorTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(633, 415);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(138, 27);
-            this.textBox4.TabIndex = 7;
+            this.authorTextBox.Location = new System.Drawing.Point(633, 415);
+            this.authorTextBox.Name = "authorTextBox";
+            this.authorTextBox.Size = new System.Drawing.Size(138, 27);
+            this.authorTextBox.TabIndex = 7;
             // 
-            // textBox5
+            // yearOfPubTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(633, 460);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(138, 27);
-            this.textBox5.TabIndex = 7;
+            this.yearOfPubTextBox.Location = new System.Drawing.Point(633, 460);
+            this.yearOfPubTextBox.Name = "yearOfPubTextBox";
+            this.yearOfPubTextBox.Size = new System.Drawing.Size(138, 27);
+            this.yearOfPubTextBox.TabIndex = 7;
             // 
             // label2
             // 
@@ -248,6 +226,7 @@
             this.add_button.TabIndex = 9;
             this.add_button.Text = "Add to database";
             this.add_button.UseVisualStyleBackColor = false;
+            this.add_button.Click += new System.EventHandler(this.add_button_Click);
             this.add_button.Paint += new System.Windows.Forms.PaintEventHandler(this.add_paint);
             // 
             // delete_button
@@ -277,12 +256,12 @@
             this.save_button.UseVisualStyleBackColor = false;
             this.save_button.Paint += new System.Windows.Forms.PaintEventHandler(this.save_paint);
             // 
-            // textBox6
+            // copiesTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(264, 505);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(94, 27);
-            this.textBox6.TabIndex = 7;
+            this.copiesTextBox.Location = new System.Drawing.Point(264, 505);
+            this.copiesTextBox.Name = "copiesTextBox";
+            this.copiesTextBox.Size = new System.Drawing.Size(94, 27);
+            this.copiesTextBox.TabIndex = 7;
             // 
             // label6
             // 
@@ -308,15 +287,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.yearOfPubTextBox);
+            this.Controls.Add(this.authorTextBox);
+            this.Controls.Add(this.copiesTextBox);
+            this.Controls.Add(this.titleTextBox);
+            this.Controls.Add(this.bookNameTextBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logout_button);
@@ -338,14 +315,12 @@
         private Button logout_button;
         private Label label1;
         private TextBox textBox1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
         private Button button3;
         private Panel panel1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox bookNameTextBox;
+        private TextBox titleTextBox;
+        private TextBox authorTextBox;
+        private TextBox yearOfPubTextBox;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -355,7 +330,7 @@
         private Button delete_button;
         private Button save_button;
         private DataGridView dataGridView1;
-        private TextBox textBox6;
+        private TextBox copiesTextBox;
         private Label label6;
     }
 }

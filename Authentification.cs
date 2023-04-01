@@ -4,14 +4,15 @@ using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace Library
 {
     public partial class Authentification : Form
     {
         // variables
-        SqlConnection con ;
-        SqlCommand cmd ;
+        MySqlConnection con ;
+        MySqlCommand cmd ;
 
         // userid and pwd
         public static int userid ;
@@ -60,15 +61,15 @@ namespace Library
             if (con.State == ConnectionState.Closed)
                 con.Open();
 
-            cmd = new SqlCommand("select * from Users where IdUser = @user_id and Password = @password", con);
+            cmd = new MySqlCommand("select * from users where Username = @user_id and Password = @password", con);
             cmd.Parameters.AddWithValue("@user_id", usernameBox.Text);
             cmd.Parameters.AddWithValue("@password", passwordBox.Text);
 
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
 
             sda.Fill(dt);
-
+            
             if (dt.Rows.Count > 0)
             {
                 this.Hide();
@@ -96,8 +97,8 @@ namespace Library
         private void Authentification_Load(object sender, EventArgs e)
         {
             // initialise connection to db
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;Integrated Security=True";
-            con = new SqlConnection(connectionString);
+            string connectionString = "server=localhost;port=3306;uid=root;pwd=root;database=library";
+            con = new MySqlConnection(connectionString);
         }
 
         private void label1_Click(object sender, EventArgs e)

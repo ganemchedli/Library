@@ -53,6 +53,7 @@
             // passwordBox
             // 
             resources.ApplyResources(this.passwordBox, "passwordBox");
+            this.passwordBox.HideSelection = false;
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
