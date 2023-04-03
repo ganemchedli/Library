@@ -67,8 +67,8 @@ namespace Library
 
         private void subscribers_Click(object sender, EventArgs e)
         {
-            ReservedBooks reservedBooks = new ReservedBooks();  
-            reservedBooks.Show();
+            SubscriberMangement subscriberMangement= new SubscriberMangement();
+            subscriberMangement.Show();
             this.Hide();
         }
 
@@ -77,6 +77,13 @@ namespace Library
             Authentification authentification = new Authentification(); 
             authentification.Show();    
             this.Hide();    
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ReservedBooks reservedBooks = new ReservedBooks();
+            reservedBooks.Show();
+            this.Hide();
         }
     }
 }

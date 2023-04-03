@@ -33,6 +33,7 @@
             this.books = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // subscribers
@@ -41,7 +42,7 @@
             this.subscribers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.subscribers.Font = new System.Drawing.Font("Simplified Arabic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.subscribers.ForeColor = System.Drawing.Color.White;
-            this.subscribers.Location = new System.Drawing.Point(185, 254);
+            this.subscribers.Location = new System.Drawing.Point(185, 213);
             this.subscribers.Name = "subscribers";
             this.subscribers.Size = new System.Drawing.Size(266, 43);
             this.subscribers.TabIndex = 0;
@@ -56,7 +57,7 @@
             this.books.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.books.Font = new System.Drawing.Font("Simplified Arabic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.books.ForeColor = System.Drawing.Color.White;
-            this.books.Location = new System.Drawing.Point(185, 183);
+            this.books.Location = new System.Drawing.Point(185, 144);
             this.books.Name = "books";
             this.books.Size = new System.Drawing.Size(266, 43);
             this.books.TabIndex = 1;
@@ -90,12 +91,27 @@
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.logout_button_paint);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Simplified Arabic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(185, 282);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(266, 43);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Borrowing managment";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(631, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.books);
@@ -115,5 +131,6 @@
         private Button books;
         private Label label1;
         private Button button1;
+        private Button button2;
     }
 }
