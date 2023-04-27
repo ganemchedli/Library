@@ -1,3 +1,3 @@
 # Library
-Library project
+Library managment project using .NET framework with winforms 
 
